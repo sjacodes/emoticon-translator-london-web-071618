@@ -25,13 +25,13 @@ def get_japanese_emoticon(file_path, english_emoticon)
   end
 end
 
-def get_english_meaning(file_path, japanense_emoticon)
+def get_english_meaning(file_path, japanese_emoticon)
   new_hash = load_library(file_path)
   if new_hash["get_emoticon"].keys.include?(english_emoticon) == false
       return "Sorry, that emoticon was not found"
   else
     new_hash["get_meaning"].each do |jap_emoticon, eng_meaning|
-      if japanense_emoticon == jap_emoticon
+      if japanese_emoticon == jap_emoticon
         return eng_meaning
       end
     end
